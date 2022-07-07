@@ -40,5 +40,8 @@
       "last 1 safari version"
     ]
   },
+  "devServer": {
+    "disableHostCheck": true
+  },
   "proxy": "https://qrcode-backend-syeda.herokuapp.com/"
 }
