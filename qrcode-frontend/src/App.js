@@ -88,7 +88,7 @@ function App() {
         </div>
       </div>
       <div class="row">
-        <div class="col-md-8 pr-0 mpr-15"></div>
+        <div class="col-md-9 pr-0 mpr-15"></div>
         <div class="col-md-4">
           <a href={"https://" + testUrl} style={{ paddingTop: 40 }}>
             {shortURL}
