@@ -12,9 +12,9 @@ function App() {
     event.preventDefault();
     url = event.target.value;
     axios
-      .get("qrcode-backend-syeda.herokuapp.com/barcodes/zxing/" + url)
+      .get("https://qrcode-backend-syeda.herokuapp.com/barcodes/zxing/" + url)
       .then((res) => {
-        event.preventDefault();
+        // event.preventDefault();
         setShortURL(res.data);
         settestUrl(url);
       });
