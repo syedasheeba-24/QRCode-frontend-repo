@@ -11,30 +11,36 @@ function App() {
   const handleURLChange = (event) => {
     event.preventDefault();
     url = event.target.value;
-    axios.get("/barcodes/zxing/" + url).then((res) => {
-      event.preventDefault();
-      setShortURL(res.data);
-      settestUrl(url);
-    });
+    axios
+      .get("https://qrcode-backend-syeda.herokuapp.com/barcodes/zxing/" + url)
+      .then((res) => {
+        event.preventDefault();
+        setShortURL(res.data);
+        settestUrl(url);
+      });
   };
 
   const handleValidation = (event) => {
     event.preventDefault();
     var validity = false;
-    axios.get("/barcodes/validateUrl/" + testUrl).then((res) => {
-      validity = res.data;
-      if (validity) {
-        alert("URL is valid");
-        event.preventDefault();
-      } else {
-        alert("URL is invalid");
-        event.preventDefault();
-      }
-    });
+    axios
+      .get(
+        "https://qrcode-backend-syeda.herokuapp.com/barcodes/validateUrl/" +
+          testUrl
+      )
+      .then((res) => {
+        validity = res.data;
+        if (validity) {
+          alert("URL is valid");
+          event.preventDefault();
+        } else {
+          alert("URL is invalid");
+          event.preventDefault();
+        }
+      });
   };
   return (
     <div class="container mt-4">
-      <p>HEYYY</p>
       <div class="row">
         <div class="col-md-8 pr-0 mpr-15">
           <Form>
